@@ -12,6 +12,7 @@
     <!-- Bootstrap core CSS -->
     <link href="//cdn.jsdelivr.net/bootstrap/3.2/css/bootstrap.min.css" rel="stylesheet">
     <link href="/public/css/style.css" rel="stylesheet">
+    <link href="/public/css/font-awesome.min.css" rel="stylesheet">
     {+head}
     {/head}
   </head>
@@ -21,14 +22,15 @@
     <div class="navbar navbar-inverse navbar-fixed-top" role="navigation">
       <div class="container">
         <div class="navbar-header">
-          <img src="/public/img/nodebr.png" />
+          <a href="/">
+            <img src="/public/img/nodebr.png" />
+          </a>
         </div>
         <ul>
-          <li class="active"><a href="/">Home</a></li>
           <li><a href="/noticias">Noticias</a></li>
           <li><a href="/#">Artigos</a></li>
           <li><a href="/#">Ideias</a></li>
-          <li><a href="/#">Vagas</a></li>
+          <li><a href="/vagas">Vagas</a></li>
           <li><a href="/#">Eventos</a></li>
           <li><a href="/#">Videos</a></li>
         </ul>
