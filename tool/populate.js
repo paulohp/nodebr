@@ -29,6 +29,7 @@ var apagar = function(){
 
     console.log('Banco de dados resetado.');
     news();
+    jobs();
   });
 
 };
@@ -62,6 +63,42 @@ var news = function(){
     news.save(loop);
   })();
 };
+
+// Cria 50 vagas ʕㅇ호ㅇʔ
+var jobs = function(){
+  console.log('Criando vagas');
+  var Jobs = require(__dirname + '/../model/jobs-model');
+  var collection = Array.apply(null, {length: 50}).map(function(){
+    return {
+      title: faker.Lorem.sentence(),
+      location: faker.Address.city(),
+      description: faker.Lorem.paragraphs(3),
+      occupation: faker.Lorem.words(1),
+      type: faker.Lorem.words(1),
+      apply_to: faker.Internet.email(),
+      company: {
+        name: faker.Company.companyName(),
+        email: faker.Internet.email(),
+        description: faker.Lorem.paragraphs(2),
+      }
+    };
+  });
+
+  (function loop(err){
+    if(err)
+      throw err;
+
+    if(collection.length < 1){
+      console.log('Vagas criadas');
+      return finalizar();
+    }
+
+    var jobs = new Jobs(collection.shift());
+    jobs.save(loop);
+  })();
+};
+
+
 
 // Sai do processo
 var finalizar = function(){

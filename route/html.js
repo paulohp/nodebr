@@ -16,3 +16,11 @@ server.route({
     view: 'news'
   }
 });
+
+server.route({
+  method: 'GET',
+  path: '/vagas',
+  handler: {
+    view: 'jobs'
+  }
+});
