@@ -32,3 +32,4 @@ server.route({
     view: 'jobs_article'
   }
 });
+
