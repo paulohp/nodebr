@@ -1,0 +1,37 @@
+{>"layout/main"/}
+{<body}
+<div class="container">
+  {@jobs page=query.page}
+  <div class="row">
+    {#jobs}
+    <div class="col-lg-12">
+      <h3>{title}</h3>
+      <p>
+        <i class="fa fa-briefcase"></i>
+          {occupation}
+        &nbsp; | &nbsp;
+        <i class="fa fa-file-text"></i>
+          {type}
+        &nbsp; | &nbsp;
+        <i class="fa fa-location-arrow"></i>
+          {location}
+        &nbsp; | &nbsp;
+        <i class="fa fa-building-o"></i>
+          {company.name}
+        &nbsp; | &nbsp;
+        <i class="fa fa-calendar"></i>
+          {created}
+      </p>
+    </div>
+    {/jobs}
+  </div>
+  <ul class="pagination">
+    <li><a href="/vagas?page=1">&laquo;</a></li>
+    {#pagination}
+    <li><a href="/vagas?page={.}">{.}</a></li>
+    {/pagination}
+    <li><a href="/vagas?page={pages}">&raquo;</a></li>
+  </ul>
+  {/jobs}
+</div>
+{/body}
