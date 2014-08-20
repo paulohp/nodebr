@@ -24,3 +24,11 @@ server.route({
     view: 'jobs'
   }
 });
+
+server.route({
+  method: 'GET',
+  path: '/vagas/{slug}',
+  handler: {
+    view: 'jobs_article'
+  }
+});
