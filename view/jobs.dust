@@ -5,7 +5,7 @@
   <div class="row">
     {#jobs}
     <div class="col-lg-12">
-      <h3>{title}</h3>
+      <h3><a href="/vagas/{slug}"><h3>{title}</h3></a></h3>
       <p>
         <i class="fa fa-briefcase"></i>
           {occupation}

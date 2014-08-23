@@ -1,5 +1,6 @@
 var mongoose = require('mongoose');
 var paginate = require('mongoose-paginate');
+var slug = require('slug');
 var jobSchema = new mongoose.Schema({
   title: {
     type: String,
@@ -12,6 +13,11 @@ var jobSchema = new mongoose.Schema({
   occupation: {
     type: String,
     default: ''
+  },
+  slug: {
+    type: String,
+    unique: true,
+    index: true
   },
   type: {
     type: String,
@@ -38,6 +44,12 @@ var jobSchema = new mongoose.Schema({
     type: Date,
     default: Date.now
   }
+});
+
+jobSchema.pre('save', function(next){
+  var ndate = new Date(this.created);
+  this.slug = slug(this.title+ndate.getTime());
+  next();
 });
 
 jobSchema.plugin(paginate);

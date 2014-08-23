@@ -29,6 +29,6 @@ server.route({
   method: 'GET',
   path: '/vagas/{slug}',
   handler: {
-    view: 'jobs_article'
+    view: 'jobs_show'
   }
 });
