@@ -1,0 +1,22 @@
+{>"layout/main"/}
+{<body}
+<div class="container">
+  {@jobs_show}
+    {#job}
+      <div class="row">
+        <h1>{title}</h1>
+        <header class="postInfo">
+          {#date}
+          <span id="date">{date}</span>
+          {/date}
+          &nbsp;&nbsp;
+        </header>
+        <br />
+        <article id="description">{description}</article>
+      </div>
+    {/job}
+  {/jobs_show}
+</div>
+{/body}
+{<footer}
+{/footer}
