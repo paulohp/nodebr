@@ -70,16 +70,16 @@ var jobs = function(){
   var Jobs = require(__dirname + '/../model/jobs-model');
   var collection = Array.apply(null, {length: 50}).map(function(){
     return {
-      title: faker.Lorem.sentence(),
-      location: faker.Address.city(),
-      description: faker.Lorem.paragraphs(3),
-      occupation: faker.Lorem.words(1),
-      type: faker.Lorem.words(1),
-      apply_to: faker.Internet.email(),
+      title: faker.lorem.sentence(),
+      location: faker.address.city(),
+      description: faker.lorem.paragraphs(3),
+      occupation: faker.lorem.words(1),
+      type: faker.lorem.words(1),
+      apply_to: faker.internet.email(),
       company: {
-        name: faker.Company.companyName(),
-        email: faker.Internet.email(),
-        description: faker.Lorem.paragraphs(2),
+        name: faker.company.companyName(),
+        email: faker.internet.email(),
+        description: faker.lorem.paragraphs(2),
       }
     };
   });

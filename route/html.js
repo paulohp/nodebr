@@ -11,14 +11,6 @@ server.route({
 
 server.route({
   method: 'GET',
-  path: '/noticias',
-  handler: {
-    view: 'news'
-  }
-});
-
-server.route({
-  method: 'GET',
   path: '/vagas',
   handler: {
     view: 'jobs'
